@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/hongbao.css" />
+	</head>
+	<body>
+		<div class="content">
+			<div class="yudi">				
+			</div>
+		</div>
+	</body>
+	<script src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		let $content=$('.content');
+		let initNumber=0;
+		for(let i=0;i<30;i++){
+			let lefts=Math.floor(Math.random()*5+2);
+			let delay=Math.floor(Math.random()*50+2);
+			initNumber+=lefts;
+			let $div=$('<div/>').addClass('yudi').css({
+				"left":`${initNumber}%`,
+				"top":`${lefts}%`,
+				"animation-delay":`${delay/10}s`
+			});
+			$content.append($div);
+		}
+	</script>
+</html>
